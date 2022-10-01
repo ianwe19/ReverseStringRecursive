@@ -35,12 +35,14 @@ int main() {
 // FUNCTION IMPLEMENTATIONS
 int ReverseStringRecursive(char* reverseMe) {
 	int i = 0;
-
-	if (*reverseMe == 'z') {
+	char swap = NULL;
+	
+	if (*reverseMe != NULL) {
+		ReverseStringRecursive(reverseMe + 1);
+	}
+	else {
 		return 0;
 	}
-
-	ReverseStringRecursive(reverseMe + 1);
 
 	std::cout << *reverseMe;
 
