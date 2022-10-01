@@ -34,17 +34,24 @@ int main() {
 
 // FUNCTION IMPLEMENTATIONS
 int ReverseStringRecursive(char* reverseMe) {
+	int arrayLength = 0;
 	int i = 0;
-	char swap = NULL;
-	
-	if (*reverseMe != NULL) {
-		ReverseStringRecursive(reverseMe + 1);
+	char character = NULL;
+
+	// get length of char array
+	while (reverseMe[arrayLength] != NULL) {
+		arrayLength++;
 	}
-	else {
+	
+	// base case
+	if (*reverseMe == NULL) {
 		return 0;
 	}
 
-	std::cout << *reverseMe;
+	// recursive case
+	else {
+		ReverseStringRecursive(reverseMe + 1);
+	}
 
 	return 0;
 }
