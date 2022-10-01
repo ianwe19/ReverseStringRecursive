@@ -1,4 +1,4 @@
-// INCLUES
+// INCLUDES
 #include <iostream>
 
 
@@ -43,6 +43,7 @@ int ReverseStringRecursive(char* reverseMe) {
 		arrayLength++;
 	}
 	
+
 	// base case
 	if (*reverseMe == NULL) {
 		return 0;
@@ -52,6 +53,11 @@ int ReverseStringRecursive(char* reverseMe) {
 	else {
 		ReverseStringRecursive(reverseMe + 1);
 	}
+
+
+	reverseMe[i] = *reverseMe;
+	std::cout << *reverseMe;
+
 
 	return 0;
 }
