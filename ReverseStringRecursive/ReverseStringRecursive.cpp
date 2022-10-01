@@ -24,7 +24,7 @@ int main() {
 	ReverseStringRecursive(someString);
 
 	// display the string after being reversed
-	std::cout << "The string contains: \n";
+	std::cout << "\nThe string contains: \n";
 	std::cout << someString << "\n";
 
 	// exit program
@@ -34,5 +34,15 @@ int main() {
 
 // FUNCTION IMPLEMENTATIONS
 int ReverseStringRecursive(char* reverseMe) {
-	// YOUR IMPLEMENTATION GOES HERE...
+	int i = 0;
+
+	if (*reverseMe == 'z') {
+		return 0;
+	}
+
+	ReverseStringRecursive(reverseMe + 1);
+
+	std::cout << *reverseMe;
+
+	return 0;
 }
