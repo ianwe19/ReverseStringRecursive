@@ -51,11 +51,11 @@ int ReverseStringRecursive(char* reverseMe) {
 
 	// recursive case
 	else {
-		ReverseStringRecursive(reverseMe + 1);
+		ReverseStringRecursive(reverseMe + 1); // should end function bc non tail
 	}
 
 
-	reverseMe[i] = *reverseMe;
+	reverseMe[i] = *reverseMe; // this is how to access
 	std::cout << *reverseMe;
 
 
