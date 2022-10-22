@@ -43,9 +43,11 @@ int ReverseStringRecursive(char* reverseMe) {
 		arrayLength++;
 	}*/
 
-	while (reverseMe[i] != NULL) {
-		swap = reverseMe[i];
+	while (reverseMe[i + 1] != NULL) {
+		swap = *reverseMe;
+		reverseMe[i] = reverseMe[i - 1];
 		reverseMe[i + 1] = swap;
+
 		i++;
 	}
 
