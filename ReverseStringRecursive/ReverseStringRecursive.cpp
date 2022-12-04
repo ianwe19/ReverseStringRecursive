@@ -34,37 +34,41 @@ int main() {
 
 // FUNCTION IMPLEMENTATIONS
 int ReverseStringRecursive(char* reverseMe) {
+	char lastLetter = reverseMe[0];
 	int i = 0;
-	char swap = NULL;
-	int arrayLength = 0;
-
-	// get length of char array
-	/*while (reverseMe[arrayLength] != NULL) {
-		arrayLength++;
-	}*/
-
-	while (reverseMe[i + 1] != NULL) {
-		swap = *reverseMe;
-		reverseMe[i] = reverseMe[i - 1];
-		reverseMe[i + 1] = swap;
-
-		i++;
-	}
 
 	// base case
-	if (*reverseMe == NULL) {
-		return 0;
+	if (reverseMe[0] == NULL) {
+		return 1;
 	}
 
 	// recursive case
 	else {
-		ReverseStringRecursive(reverseMe + 1); // should end function bc non tail
+		// store the first char in string
+		lastLetter = reverseMe[0];
+
+		// rewrite string without first char
+		i = 0;
+		while (reverseMe[i] != NULL) {
+			reverseMe[i] = reverseMe[i + 1];
+			i++;
+		}
+
+		// recursive call
+		ReverseStringRecursive(reverseMe);
+
+
+		// after recursing is complete, append stored char to end of string
+		i = 0;
+		while (reverseMe[i] != NULL) {
+			i++;
+		}
+
+		reverseMe[i] = lastLetter;
+
+		// add null char to end
+		reverseMe[i + 1] = NULL;
 	}
-
-
-	// reverseMe[i] = *reverseMe; // this is how to access
-	// std::cout << *reverseMe;
-
 
 	return 0;
 }
